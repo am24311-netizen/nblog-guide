@@ -1,8 +1,8 @@
 {
-  "latest_version": "1.0.0",
-  "download_url": "",
-  "sha256": "",
+  "latest_version": "1.1.0",
+  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.1.0/NaverAutomation_v1.1.0_secure_release_20260821.zip",
+  "sha256": "173f65c8a93f68c41ecca44a49fafe9f101d47a59d8bf3259390207ae4a1114c",
   "required": false,
-  "release_notes": "초기 매니페스트. 아직 배포본이 올라가지 않았습니다.",
-  "min_supported_version": ""
+  "release_notes": "UI 전면 개편 — 사이드바, 대시보드, 진행 상태 표시, 도움말 내장. 발행이 막히던 제목/본문 불일치 문제 수정.",
+  "min_supported_version": "1.0.0"
 }
