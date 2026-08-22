@@ -1,8 +1,8 @@
 {
-  "latest_version": "1.1.0",
-  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.1.0/NaverAutomation_v1.1.0_secure_release_20260821.zip",
-  "sha256": "173f65c8a93f68c41ecca44a49fafe9f101d47a59d8bf3259390207ae4a1114c",
+  "latest_version": "1.1.1",
+  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.1.1/NaverAutomation_v1.1.1_secure_release_20260822.zip",
+  "sha256": "1d91eaa85a6561cc720153ec492feec9d57d6ac91bcfc7cae17ce0ecfee1654a",
   "required": false,
-  "release_notes": "UI 전면 개편 — 사이드바, 대시보드, 진행 상태 표시, 도움말 내장. 발행이 막히던 제목/본문 불일치 문제 수정.",
+  "release_notes": "API 키 설정 창의 저장 버튼이 잘려 안 보이던 문제 수정. 도움말을 웹 가이드·공식 사이트 링크로 정리. 사이드바/문구 표시 오류 2건 수정.",
   "min_supported_version": "1.0.0"
 }

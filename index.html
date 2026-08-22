@@ -12,6 +12,7 @@
   --card:#f7f9fb; --accent:#03c75a; --accent-dk:#02a349;
   --warn-bg:#fff7e6; --warn-line:#ffd591; --warn-fg:#7a4d00;
   --danger-bg:#fff1f0; --danger-line:#ffa39e; --danger-fg:#8c1a13;
+  --ok-bg:#f0fdf5; --ok-line:#a7e8c3; --ok-fg:#0b6b3a;
   --code-bg:#f2f4f7;
 }
 @media (prefers-color-scheme: dark){
@@ -20,6 +21,7 @@
     --card:#1c2026; --accent:#03c75a; --accent-dk:#04e069;
     --warn-bg:#2b2312; --warn-line:#5c4a1f; --warn-fg:#e8c37a;
     --danger-bg:#2b1614; --danger-line:#5c2b26; --danger-fg:#f0a6a0;
+    --ok-bg:#12241a; --ok-line:#2c5c40; --ok-fg:#8fdcae;
     --code-bg:#22272e;
   }
 }
@@ -28,6 +30,7 @@
   --card:#1c2026; --accent:#03c75a; --accent-dk:#04e069;
   --warn-bg:#2b2312; --warn-line:#5c4a1f; --warn-fg:#e8c37a;
   --danger-bg:#2b1614; --danger-line:#5c2b26; --danger-fg:#f0a6a0;
+  --ok-bg:#12241a; --ok-line:#2c5c40; --ok-fg:#8fdcae;
   --code-bg:#22272e;
 }
 *{box-sizing:border-box}
@@ -37,9 +40,7 @@ body{
   line-height:1.75; font-size:16px;
 }
 .wrap{max-width:860px; margin:0 auto; padding:0 20px 96px}
-header{
-  border-bottom:1px solid var(--line); padding:48px 0 32px; margin-bottom:8px;
-}
+header{border-bottom:1px solid var(--line); padding:48px 0 32px; margin-bottom:8px}
 header h1{margin:0 0 8px; font-size:30px; letter-spacing:-.02em}
 header p{margin:0; color:var(--muted); font-size:15px}
 .badge{
@@ -47,12 +48,18 @@ header p{margin:0; color:var(--muted); font-size:15px}
   font-weight:700; padding:3px 9px; border-radius:999px; vertical-align:middle;
   margin-left:8px;
 }
+.vbadge{
+  display:inline-block; background:var(--card); border:1px solid var(--line);
+  color:var(--muted); font-size:12px; padding:3px 10px; border-radius:999px;
+  margin-left:6px; vertical-align:middle;
+}
 nav.toc{
   background:var(--card); border:1px solid var(--line); border-radius:10px;
   padding:18px 22px; margin:28px 0 40px;
 }
 nav.toc strong{display:block; margin-bottom:8px; font-size:14px; color:var(--muted)}
-nav.toc ol{margin:0; padding-left:20px}
+nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:26px}
+nav.toc li{break-inside:avoid}
 nav.toc a{color:var(--fg); text-decoration:none; border-bottom:1px solid transparent}
 nav.toc a:hover{border-bottom-color:var(--accent)}
 h2{
@@ -72,27 +79,36 @@ pre{
   padding:14px 16px; overflow-x:auto; font-size:13.5px; line-height:1.6;
 }
 pre code{background:none; padding:0}
-.note,.warn,.danger{
-  border-radius:8px; padding:14px 18px; margin:18px 0; font-size:15px;
+figure{margin:20px 0}
+figure img{
+  width:100%; display:block; border:1px solid var(--line); border-radius:9px;
 }
+figcaption{margin-top:8px; color:var(--muted); font-size:13.5px}
+.note,.warn,.danger,.ok{border-radius:8px; padding:14px 18px; margin:18px 0; font-size:15px}
 .note{background:var(--card); border:1px solid var(--line)}
 .warn{background:var(--warn-bg); border:1px solid var(--warn-line); color:var(--warn-fg)}
 .danger{background:var(--danger-bg); border:1px solid var(--danger-line); color:var(--danger-fg)}
-.note strong,.warn strong,.danger strong{display:block; margin-bottom:4px}
+.ok{background:var(--ok-bg); border:1px solid var(--ok-line); color:var(--ok-fg)}
+.note strong,.warn strong,.danger strong,.ok strong{display:block; margin-bottom:4px}
 table{border-collapse:collapse; width:100%; margin:18px 0; font-size:14.5px}
 th,td{border:1px solid var(--line); padding:9px 12px; text-align:left; vertical-align:top}
 th{background:var(--card); font-weight:600}
 .tbl-scroll{overflow-x:auto}
 .steps{counter-reset:s; list-style:none; padding-left:0}
-.steps>li{
-  counter-increment:s; position:relative; padding-left:42px; margin:20px 0;
-}
+.steps>li{counter-increment:s; position:relative; padding-left:42px; margin:20px 0}
 .steps>li::before{
   content:counter(s); position:absolute; left:0; top:1px;
   width:28px; height:28px; border-radius:50%; background:var(--accent);
   color:#fff; font-weight:700; font-size:14px;
   display:flex; align-items:center; justify-content:center;
 }
+.dlbtn{
+  display:inline-block; background:var(--accent); color:#fff !important;
+  text-decoration:none; padding:14px 28px; border-radius:9px;
+  font-size:17px; font-weight:700; margin:10px 0;
+}
+.dlbtn:hover{background:var(--accent-dk)}
+.dots{font-size:20px; letter-spacing:2px; margin:6px 0}
 footer{
   margin-top:72px; padding-top:24px; border-top:1px solid var(--line);
   color:var(--muted); font-size:13px;
@@ -104,8 +120,8 @@ a{color:var(--accent-dk)}
 <div class="wrap">
 
 <header>
-  <h1>네이버 블로그 자동 포스팅 사용 가이드<span class="badge">비공개</span></h1>
-  <p>설치 · 초기 설정 · 운영 방법을 순서대로 정리했습니다.</p>
+  <h1>네이버 블로그 자동 포스팅 사용 가이드<span class="badge">비공개</span><span class="vbadge">v1.1.1</span></h1>
+  <p>키워드만 넣어두면 글을 쓰고 사진을 붙여 블로그에 올려 드립니다.</p>
 </header>
 
 <div class="danger">
@@ -116,140 +132,424 @@ a{color:var(--accent-dk)}
 <nav class="toc">
   <strong>목차</strong>
   <ol>
+    <li><a href="#quick">3분 요약</a></li>
     <li><a href="#install">설치하기</a></li>
-    <li><a href="#apikey">API 키 발급 및 입력</a></li>
+    <li><a href="#screen">화면 둘러보기</a></li>
+    <li><a href="#apikey">API 키 넣기</a></li>
     <li><a href="#login">네이버 로그인</a></li>
     <li><a href="#run">첫 발행 해보기</a></li>
-    <li><a href="#modes">글 유형 3가지</a></li>
-    <li><a href="#update">자동 업데이트</a></li>
-    <li><a href="#trouble">문제가 생겼을 때</a></li>
+    <li><a href="#modes">글 유형 5가지</a></li>
+    <li><a href="#writer">글 설정 — 어떤 AI로 쓸까</a></li>
+    <li><a href="#photo">사진 넣기</a></li>
+    <li><a href="#store">스토어몰 링크 · 쿠팡파트너스</a></li>
+    <li><a href="#schedule">발행 규칙 — 언제 올릴까</a></li>
+    <li><a href="#progress">진행 상태 읽는 법</a></li>
+    <li><a href="#update">업데이트</a></li>
+    <li><a href="#trouble">이럴 땐 이렇게</a></li>
+    <li><a href="#download">다운로드</a></li>
   </ol>
 </nav>
+
+<h2 id="quick">3분 요약</h2>
+<p>처음 한 번만 설정하면, 다음부터는 <b>[실행]</b> 버튼만 누르시면 됩니다.</p>
+<ol class="steps">
+  <li><strong>압축을 풀고 실행</strong><p><code>NaverAutomationUI.exe</code> 를 두 번 클릭합니다.</p></li>
+  <li><strong>API 키 넣기</strong><p>왼쪽 <b>[4 계정/API]</b> → <b>[🔑 API 키 설정]</b> → OpenAI 키 붙여넣기 → <b>[설정 저장]</b></p></li>
+  <li><strong>네이버 로그인</strong><p>같은 화면의 <b>[네이버 로그인]</b> 을 눌러 한 번 로그인해 둡니다.</p></li>
+  <li><strong>첫 글 올리기</strong><p>왼쪽 <b>[1 실행]</b> → 키워드와 블로그ID 입력 → <b>[실행 (단일 발행)]</b></p></li>
+</ol>
+<div class="ok">
+  <strong>다 되면 이렇게 나옵니다</strong>
+  진행 상태의 동그라미 5개가 모두 채워지고 <b>“발행 성공 🎉”</b> 이 뜹니다.
+</div>
 
 <h2 id="install">1. 설치하기</h2>
 <ol class="steps">
   <li>
-    <strong>배포 파일 받기</strong>
-    <p>전달받은 ZIP 파일을 <b>바탕화면이 아닌 고정된 폴더</b>에 풀어주세요.
-    예: <code>C:\NaverAutomation\</code></p>
+    <strong>파일 받기</strong>
+    <p>아래 <a href="#download">다운로드</a> 에서 ZIP 파일을 받습니다.</p>
   </li>
   <li>
     <strong>압축 풀기</strong>
-    <p>ZIP을 우클릭 → <b>압축 풀기</b>. 폴더 안에 다음 파일이 있으면 정상입니다.</p>
-    <pre><code>NaverAutomationUI.exe      &lt;- 실행 파일
+    <p>ZIP 을 우클릭 → <b>압축 풀기</b>. <b>고정된 폴더</b>에 푸시는 걸 권합니다.
+    예: <code>C:\NaverAutomation\</code></p>
+    <p>폴더 안에 이 파일들이 있으면 정상입니다.</p>
+<pre><code>NaverAutomationUI.exe      &lt;- 이걸 실행합니다
 RunAllWorker.exe           &lt;- 발행 담당 (직접 실행하지 마세요)
-NaverAutomationUpdater.exe &lt;- 자동 업데이트
+NaverAutomationUpdater.exe &lt;- 업데이트용
 version.txt
-templates\  manual\</code></pre>
+templates\   manual\</code></pre>
   </li>
   <li>
     <strong>실행</strong>
-    <p><code>NaverAutomationUI.exe</code> 를 더블클릭합니다.</p>
+    <p><code>NaverAutomationUI.exe</code> 를 두 번 클릭합니다.</p>
   </li>
 </ol>
 
 <div class="note">
   <strong>윈도우 보안 경고가 뜨면</strong>
-  “추가 정보” → “실행”을 누르세요. 코드 서명이 없는 프로그램이라 나오는 안내입니다.
+  <b>[추가 정보]</b> → <b>[실행]</b> 을 누르세요. 코드 서명이 없는 프로그램이라 나오는 안내이며,
+  한 번 실행하면 다음부터는 뜨지 않습니다.
 </div>
 
-<h2 id="apikey">2. API 키 발급 및 입력</h2>
-<p>원고를 만들려면 AI API 키가 최소 1개 필요합니다.</p>
+<div class="warn">
+  <strong>ZIP 안에서 바로 실행하지 마세요</strong>
+  압축을 풀지 않고 실행하면 동작하지 않습니다. 반드시 <b>압축을 푼 뒤</b> 실행하세요.
+</div>
+
+<h2 id="screen">2. 화면 둘러보기</h2>
+<p>프로그램을 켜면 <b>대시보드</b>가 먼저 나옵니다. 지금 상태를 한눈에 보는 화면입니다.</p>
+
+<figure>
+  <img src="assets/01-dashboard.jpg" alt="대시보드 화면 — 지금 상태, 바로 가기, 도움말">
+  <figcaption>대시보드. 왼쪽 세로 목록이 이 프로그램의 전부입니다.</figcaption>
+</figure>
 
 <div class="tbl-scroll">
 <table>
-  <tr><th>키</th><th>필요 여부</th><th>발급처</th></tr>
-  <tr><td>OpenAI</td><td><b>필수</b> (기본 엔진)</td><td>platform.openai.com</td></tr>
-  <tr><td>Pixabay</td><td>권장 (사진 자동 수집)</td><td>pixabay.com/api/docs</td></tr>
-  <tr><td>Anthropic / Gemini</td><td>선택 (엔진 교체용)</td><td>각 사이트</td></tr>
+  <tr><th>지금 상태</th><td>라이선스 남은 기간 · 다음 예약 시각 · 오늘 발행한 건수</td></tr>
+  <tr><th>바로 가기</th><td>각 화면으로 한 번에 이동합니다.</td></tr>
+  <tr><th>도움말</th><td>이 가이드와 제휴사 공식 사이트를 바로 엽니다.</td></tr>
 </table>
 </div>
 
-<h3>입력 방법</h3>
+<h3>왼쪽 목록 — 위에서 아래로 한 번씩</h3>
+<div class="tbl-scroll">
+<table>
+  <tr><th>1 실행</th><td>무엇을 쓸지 정하고 실행하는 곳. <b>평소에 쓰는 화면</b>입니다.</td></tr>
+  <tr><th>2 글 설정</th><td>어떤 AI로 글을 쓸지 정합니다.</td></tr>
+  <tr><th>3 발행 규칙</th><td>언제, 몇 건이나 올릴지 정합니다.</td></tr>
+  <tr><th>4 계정/API</th><td>API 키와 네이버 로그인.</td></tr>
+</table>
+</div>
+
+<div class="note">
+  <strong>맨 아래 흰 칸은 진행 기록입니다</strong>
+  어느 화면에 있든 항상 보입니다. 실행하면 지금 무엇을 하는 중인지 여기에 한글로 나옵니다.
+  문제가 생겼을 때 <b>가장 먼저 볼 곳</b>입니다.
+</div>
+
+<h2 id="apikey">3. API 키 넣기</h2>
+<p>글을 쓰려면 AI 키가 <b>최소 하나</b> 있어야 합니다. 나머지는 없어도 발행됩니다.</p>
+
+<figure>
+  <img src="assets/05-account.jpg" alt="계정/API 화면 — API 키 설정과 네이버 로그인">
+  <figcaption>[4 계정/API] 화면. 여기서 <b>[🔑 API 키 설정]</b> 을 누릅니다.</figcaption>
+</figure>
+
+<figure>
+  <img src="assets/06-api-dialog.jpg" alt="API 설정 창 — 키 목록과 저장 버튼">
+  <figcaption>API 설정 창. 넣은 뒤 <b>왼쪽 아래 [설정 저장]</b> 을 꼭 누르세요.</figcaption>
+</figure>
+
+<div class="tbl-scroll">
+<table>
+  <tr><th>키</th><th>필요 여부</th><th>어디서 받나</th></tr>
+  <tr><td>OpenAI API Key</td><td><b>필수</b> — 글을 씁니다</td><td>platform.openai.com</td></tr>
+  <tr><td>Pixabay API Key</td><td>권장 — 무료 사진</td><td>pixabay.com/api/docs</td></tr>
+  <tr><td>Anthropic / Gemini</td><td>선택 — 다른 AI로 바꿀 때</td><td>각 사이트</td></tr>
+  <tr><td>Google Search / CSE</td><td>선택 — 참고 자료 수집</td><td>Google Cloud</td></tr>
+  <tr><td>네이버 검색 Client</td><td>선택 — 없어도 발행 정상</td><td>developers.naver.com</td></tr>
+  <tr><td>쿠팡파트너스</td><td>선택 — 쿠팡 자동 모드</td><td>파트너스 &gt; 도구 &gt; Open API</td></tr>
+</table>
+</div>
+
+<h3>넣는 방법</h3>
 <ol class="steps">
-  <li>프로그램 상단 <b>[API 키 설정]</b> 버튼 클릭</li>
-  <li>발급받은 키를 붙여넣기</li>
-  <li><b>[설정 저장]</b> 클릭</li>
+  <li>키를 복사합니다. (발급 사이트에서 <b>Copy</b>)</li>
+  <li>해당 칸 옆의 <b>[붙여넣기]</b> 를 누릅니다.</li>
+  <li>잘 들어갔는지 보려면 <b>[보기]</b>, 지우려면 <b>[지우기]</b>.</li>
+  <li><b>왼쪽 아래 [설정 저장]</b> 을 누릅니다. <b>이걸 안 누르면 저장되지 않습니다.</b></li>
 </ol>
 
 <div class="warn">
-  <strong>키는 = 뒤에 공백 없이</strong>
-  앞뒤 공백이나 따옴표가 들어가면 인식되지 않습니다.
+  <strong>키는 앞뒤 공백 없이</strong>
+  공백이나 따옴표가 섞이면 인식되지 않습니다. <b>[붙여넣기]</b> 버튼을 쓰시면 안전합니다.
 </div>
 
-<h2 id="login">3. 네이버 로그인</h2>
-<p>처음 한 번만 직접 로그인하면, 이후에는 자동으로 유지됩니다.</p>
+<div class="danger">
+  <strong>API 키는 비밀번호와 같습니다</strong>
+  화면을 캡처해서 남에게 보내실 때는 <b>키가 보이는 부분을 반드시 가려주세요.</b>
+</div>
+
+<h2 id="login">4. 네이버 로그인</h2>
+<p><b>[4 계정/API]</b> 화면의 <b>[네이버 로그인]</b> 을 누르면 크롬 창이 열립니다.
+평소처럼 로그인하시면 됩니다. <b>처음 한 번만</b> 하면 됩니다.</p>
+
 <ol class="steps">
-  <li><b>[실행]</b>을 누르면 크롬 창이 열립니다.</li>
-  <li>열린 창에서 네이버에 <b>직접 로그인</b>하세요.</li>
-  <li>로그인이 끝나면 프로그램이 자동으로 다음 단계를 진행합니다.</li>
+  <li><strong>크롬을 모두 닫습니다</strong><p>같은 프로필을 쓰는 창이 열려 있으면 잠겨서 실패합니다.</p></li>
+  <li><strong>[네이버 로그인] 클릭</strong><p>크롬 창이 새로 열립니다.</p></li>
+  <li><strong>네이버에 로그인</strong><p>2단계 인증이 있으면 그것까지 마칩니다.</p></li>
+  <li><strong>창을 닫습니다</strong><p>프로그램이 로그인 정보를 기억합니다.</p></li>
 </ol>
 
-<div class="warn">
-  <strong>로그인 전에 크롬을 모두 닫아주세요</strong>
-  같은 프로필을 쓰는 크롬 창이 여러 개 열려 있으면 프로필이 잠겨 실행이 실패합니다.
-  작업 표시줄에서 크롬을 전부 종료한 뒤 실행하세요.
+<div class="ok">
+  <strong>다음부터는 자동입니다</strong>
+  로그인 정보가 보관되어 발행할 때 자동으로 들어갑니다.
+  가끔 풀리면 같은 방법으로 다시 로그인하시면 됩니다.
 </div>
 
-<h2 id="run">4. 첫 발행 해보기</h2>
+<h2 id="run">5. 첫 발행 해보기</h2>
+
+<figure>
+  <img src="assets/02-run.jpg" alt="실행 화면 — 진행 상태, 실행 모드, 키워드, 이미지, 스토어몰 링크, 실행 버튼">
+  <figcaption>[1 실행] 화면. 위에서 아래로 채우고 맨 아래 <b>[실행 (단일 발행)]</b> 을 누릅니다.</figcaption>
+</figure>
+
 <ol class="steps">
-  <li><b>키워드 입력</b> — 예: “전기요금 절약”</li>
-  <li><b>발행 개수</b> — 처음에는 <b>1개</b>로 시작하세요.</li>
-  <li><b>[실행]</b> 클릭</li>
-  <li>로그 창에 <code>naver_publish=1</code> 이 뜨면 발행 성공입니다.</li>
+  <li><strong>실행 모드</strong><p><b>정보성 키워드</b> 를 고릅니다. (처음에는 이게 가장 쉽습니다)</p></li>
+  <li><strong>정보성 키워드</strong><p>쓰고 싶은 주제를 넣습니다. 예: <code>여름철 제습기 관리법</code></p></li>
+  <li><strong>블로그ID</strong><p>본인 블로그 주소의 아이디입니다. <code>blog.naver.com/<b>여기</b></code></p></li>
+  <li><strong>이미지 개수</strong><p>처음에는 <code>1 ~ 2</code> 정도로 시작하세요.</p></li>
+  <li><strong>[실행 (단일 발행)] 클릭</strong><p>크롬이 열리고 3~5분 정도 걸립니다.</p></li>
 </ol>
 
 <div class="note">
-  <strong>처음에는 꼭 1건만</strong>
-  글이 마음에 드는지, 사진이 잘 붙는지 확인한 뒤 개수를 늘리세요.
+  <strong>키워드를 여러 개 쌓아두려면</strong>
+  <b>[정보 키워드 편집]</b> 을 누르면 메모장이 열립니다. <b>한 줄에 하나씩</b> 적어두세요.
+  실행할 때마다 위에서부터 하나씩 꺼내 씁니다. 성공한 키워드는 목록에서 사라집니다.
 </div>
 
-<h2 id="modes">5. 글 유형 3가지</h2>
+<div class="warn">
+  <strong>실행 중에는 크롬 창을 건드리지 마세요</strong>
+  프로그램이 크롬을 직접 조작합니다. 중간에 클릭하거나 창을 닫으면 실패할 수 있습니다.
+  다른 일을 하셔야 하면 <b>다른 브라우저</b>를 쓰세요.
+</div>
+
+<div class="note">
+  <strong>처음에는 꼭 1건만</strong>
+  글이 마음에 드는지, 사진이 잘 붙는지 확인한 뒤에 개수를 늘리세요.
+</div>
+
+<h2 id="modes">6. 글 유형 5가지</h2>
 <div class="tbl-scroll">
 <table>
-  <tr><th>유형</th><th>내용</th><th>필요한 것</th></tr>
-  <tr><td><b>정보성</b></td><td>키워드 기반 정보 글</td><td>키워드만</td></tr>
-  <tr><td><b>상품 후기</b></td><td>상품 리뷰 형식</td><td>키워드 + 상품 URL</td></tr>
-  <tr><td><b>상품 대량</b></td><td>여러 상품을 순차 발행</td><td>상품링크 파일</td></tr>
+  <tr><th>유형</th><th>어떤 글</th><th>준비할 것</th></tr>
+  <tr><td><b>정보성 키워드</b></td><td>주제를 설명하는 정보 글</td><td>키워드만</td></tr>
+  <tr><td><b>후기엑셀</b></td><td>상품 사용 후기</td><td>엑셀에 상품명 + 링크</td></tr>
+  <tr><td><b>상품대량(링크파일)</b></td><td>여러 상품을 순서대로</td><td>상품 링크 목록 파일</td></tr>
+  <tr><td><b>혼합 발행</b></td><td>정보 글과 후기 글을 섞어서</td><td>비율(%)만 정하면 됩니다</td></tr>
+  <tr><td><b>레시피</b></td><td>요리 레시피 형식</td><td>요리 이름</td></tr>
 </table>
 </div>
-<p><b>혼합 모드</b>에서는 위 세 가지 비율을 정해 섞어서 발행할 수 있습니다.</p>
+<div class="note">
+  <strong>처음이라면</strong>
+  <b>정보성 키워드</b>로 두세 편 올려보시고, 익숙해지면 다른 유형을 써보세요.
+</div>
 
-<h2 id="update">6. 자동 업데이트</h2>
-<p>프로그램이 켜질 때 새 버전이 있는지 자동으로 확인합니다.</p>
+<h2 id="writer">7. 글 설정 — 어떤 AI로 쓸까</h2>
+
+<figure>
+  <img src="assets/03-content.jpg" alt="글 설정 화면 — 원고 생성 엔진 선택">
+  <figcaption>[2 글 설정] 화면. 기본값 그대로 두셔도 됩니다.</figcaption>
+</figure>
+
 <ul>
-  <li>새 버전이 있으면 안내창이 뜹니다.</li>
-  <li><b>[업데이트]</b>를 누르면 프로그램이 종료됐다가 자동으로 다시 켜집니다.</li>
+  <li><b>원고 생성 엔진</b> — 기본은 <b>OpenAI</b> 입니다. 넣어둔 키에 맞춰 고르세요.</li>
+  <li><b>외부기사 참고</b> — 켜면 관련 기사를 찾아 참고합니다. (네이버 검색 키 필요)</li>
+  <li><b>고급 옵션</b> — 평소에는 접어두셔도 됩니다. 세부 설정과 프롬프트 편집이 들어 있습니다.</li>
+</ul>
+
+<div class="note">
+  <strong>기본값이 가장 무난합니다</strong>
+  잘 모르시겠으면 손대지 마세요. 기본 설정으로도 잘 나옵니다.
+</div>
+
+<h2 id="photo">8. 사진 넣기</h2>
+<p>사진은 <b>[1 실행]</b> 화면의 <b>이미지</b> 칸에서 정합니다.</p>
+
+<div class="tbl-scroll">
+<table>
+  <tr><th>정보 이미지폴더</th><td>정보 글에 쓸 사진이 든 폴더</td></tr>
+  <tr><th>상품 참고 이미지폴더</th><td>후기 글에 쓸 상품 사진 폴더</td></tr>
+  <tr><th>이미지 개수</th><td>한 편에 몇 장 넣을지. 예: <code>1 ~ 2</code></td></tr>
+</table>
+</div>
+
+<div class="ok">
+  <strong>사진이 없어도 발행됩니다</strong>
+  폴더가 비어 있으면 무료 사진(Pixabay)에서 찾거나, 사진 없이 올립니다.
+  <b>사진 때문에 발행이 막히지는 않습니다.</b>
+</div>
+
+<div class="note">
+  <strong>같은 사진이 반복되지 않습니다</strong>
+  이미 쓴 사진을 기억해서 다시 쓰지 않습니다. 폴더에 사진을 넉넉히 넣어두세요.
+</div>
+
+<h2 id="store">9. 스토어몰 링크 · 쿠팡파트너스</h2>
+<p>상품 링크를 글에 넣고 싶을 때만 씁니다. <b>안 쓰셔도 됩니다.</b></p>
+
+<div class="tbl-scroll">
+<table>
+  <tr><th>일반 스토어 링크</th><td><b>기본값.</b> 링크만 넣습니다.</td></tr>
+  <tr><th>네이버 쇼핑커넥트</th><td>네이버 <b>브랜드 커넥트</b> 링크를 쓸 때</td></tr>
+  <tr><th>쿠팡파트너스</th><td>쿠팡 수익 링크를 쓸 때</td></tr>
+</table>
+</div>
+
+<div class="danger">
+  <strong>쿠팡파트너스를 쓰신다면 꼭 읽어주세요</strong>
+  쿠팡파트너스 링크가 들어간 글에는 <b>대가성 안내 문구가 반드시</b> 들어가야 합니다.
+  넣지 않으면 <b>파트너스 활동이 정지</b>될 수 있습니다.<br><br>
+  그래서 <b>[쿠팡파트너스]</b> 를 고르면 안내 문구 넣기가 <b>자동으로 켜지고, 끌 수 없게 잠깁니다.</b>
+  불편해 보여도 <b>사장님 계정을 지키기 위한 장치</b>입니다.
+</div>
+
+<p>쿠팡파트너스 정책과 가입 방법은 <b>공식 사이트</b>가 가장 정확합니다.
+프로그램 <b>대시보드 → [쿠팡파트너스 공식]</b> 버튼으로 바로 갈 수 있습니다.</p>
+<p><a href="https://partners.coupang.com/" target="_blank" rel="noopener">partners.coupang.com</a>
+&nbsp;·&nbsp;
+네이버 제휴는
+<a href="https://brandconnect.naver.com/about/creator?redirect=true" target="_blank" rel="noopener">브랜드 커넥트</a></p>
+<div class="note">
+  <strong>왜 저희가 따로 안 만드나요</strong>
+  제휴 정책은 자주 바뀝니다. 저희가 베껴 적어두면 <b>낡은 정보가 남아</b> 오히려 위험합니다.
+  그래서 공식 사이트로 바로 연결합니다.
+</div>
+
+<h2 id="schedule">10. 발행 규칙 — 언제 올릴까</h2>
+
+<figure>
+  <img src="assets/04-schedule.jpg" alt="발행 규칙 화면 — 시간대, 주말 감소, 일일 상한, 예약">
+  <figcaption>[3 발행 규칙] 화면.</figcaption>
+</figure>
+
+<div class="tbl-scroll">
+<table>
+  <tr><th>발행 시간대</th><td>이 시간 안에서만 올립니다. 예: 09~23시</td></tr>
+  <tr><th>주말 감소</th><td>주말에는 건수를 줄입니다.</td></tr>
+  <tr><th>일일 상한</th><td>하루 최대 몇 건까지 올릴지</td></tr>
+  <tr><th>시작 지연</th><td>실행 후 조금 기다렸다 시작합니다.</td></tr>
+  <tr><th>네이버 발행</th><td>즉시 발행 / 예약 발행을 고릅니다.</td></tr>
+</table>
+</div>
+
+<div class="note">
+  <strong>왜 이런 게 있나요</strong>
+  사람이 쓰는 것처럼 자연스럽게 올리기 위해서입니다.
+  짧은 시간에 몰아서 올리면 블로그에 좋지 않습니다.
+</div>
+
+<div class="warn">
+  <strong>“아무것도 안 하고 끝났어요” 라고 나온다면</strong>
+  <b>발행 시간대 밖</b>이라 건너뛴 것일 수 있습니다.
+  진행 기록에 <b>“지금은 발행 시간대가 아니에요”</b> 라고 나옵니다.
+  시간대를 넓히시거나, 그 시간에 실행하세요.
+</div>
+
+<h2 id="progress">11. 진행 상태 읽는 법</h2>
+<p><b>[1 실행]</b> 화면 맨 위 <b>진행 상태</b> 에 지금 어디까지 왔는지 나옵니다.</p>
+
+<p class="dots">● ━━ ● ━━ ● ━━ ○ ━━ ○ &nbsp;&nbsp;<span style="font-size:15px;letter-spacing:0">3/5 원고 쓰는 중</span></p>
+
+<div class="tbl-scroll">
+<table>
+  <tr><th>1 브라우저</th><td>크롬을 준비합니다. (몇 초)</td></tr>
+  <tr><th>2 로그인</th><td>네이버 로그인 상태를 확인합니다.</td></tr>
+  <tr><th>3 사진</th><td>넣을 사진을 고르고 다듬습니다.</td></tr>
+  <tr><th>4 원고</th><td>AI가 글을 씁니다. <b>여기가 가장 오래 걸립니다 (1~3분)</b></td></tr>
+  <tr><th>5 발행</th><td>네이버에 올립니다.</td></tr>
+</table>
+</div>
+
+<div class="ok">
+  <strong>동그라미 5개가 다 차면 성공입니다</strong>
+  진행 기록에 <b>“발행 성공 🎉”</b> 과 함께 글 주소가 나옵니다.
+</div>
+
+<div class="note">
+  <strong>동그라미가 안 늘어난다고 멈춘 게 아닙니다</strong>
+  <b>4 원고</b> 단계에서 1~3분 머무는 것이 정상입니다. AI가 글을 쓰는 중입니다.
+</div>
+
+<h2 id="update">12. 업데이트</h2>
+<p><b>[1 실행]</b> 화면 아래쪽의 <b>[업데이트 확인]</b> 버튼을 누르면 새 버전이 있는지 확인합니다.</p>
+<ul>
+  <li>버튼 옆에 <b>지금 쓰시는 버전</b>이 표시됩니다.</li>
+  <li>새 버전이 있으면 안내창이 뜹니다. 안내대로 진행하시면 됩니다.</li>
   <li>업데이트 중 문제가 생기면 <b>이전 버전으로 자동 복구</b>됩니다.</li>
 </ul>
 
 <div class="note">
   <strong>업데이트해도 지워지지 않는 것</strong>
-  API 키(<code>secrets.env</code>), 라이선스(<code>license.key</code>), 설정(<code>settings.json</code>),
-  로그인 정보, 작성한 글 기록은 그대로 유지됩니다.
+  API 키, 라이선스, 설정, 네이버 로그인 정보, 키워드 목록, 작성 기록은 <b>그대로 유지</b>됩니다.
+  다시 넣지 않으셔도 됩니다.
 </div>
 
-<h2 id="trouble">7. 문제가 생겼을 때</h2>
+<div class="warn">
+  <strong>자동으로 확인하지는 않습니다</strong>
+  프로그램이 켜질 때 스스로 확인하지 않습니다. <b>가끔 [업데이트 확인] 을 눌러보세요.</b>
+</div>
 
-<h3>제목이 비어 있다고 나옵니다</h3>
-<p>네이버 편집기가 늦게 뜬 경우입니다. 크롬을 모두 닫고 다시 실행해 주세요.</p>
+<h2 id="trouble">13. 이럴 땐 이렇게</h2>
+
+<h3>실행했는데 아무 일도 안 일어납니다</h3>
+<p>맨 아래 <b>진행 기록</b>을 봐주세요. 이유가 한글로 나옵니다. 자주 나오는 것은 두 가지입니다.</p>
+<ul>
+  <li><b>발행 시간대 밖</b> — <a href="#schedule">발행 규칙</a>에서 시간대를 확인하세요.</li>
+  <li><b>키워드가 비어 있음</b> — 키워드 칸이나 키워드 파일을 확인하세요.</li>
+</ul>
+
+<h3>“제목을 입력해주세요” 라고 나옵니다</h3>
+<p>네이버 글쓰기 화면이 덜 열린 상태에서 진행된 경우입니다.
+크롬 창을 <b>전부 닫고</b> 다시 실행해 보세요.</p>
 
 <h3>사진이 안 붙습니다</h3>
-<p>Pixabay 키가 없거나, 해당 키워드에 맞는 사진이 없는 경우입니다.
-사진 없이도 글은 정상 발행됩니다.</p>
+<ol>
+  <li>이미지폴더 경로가 맞는지 확인하세요.</li>
+  <li>폴더에 사진이 실제로 있는지 보세요.</li>
+  <li><b>이미지 개수</b>를 <code>1 ~ 2</code> 로 낮춰보세요.</li>
+</ol>
+<p>사진이 없어도 글은 정상 발행됩니다.</p>
 
 <h3>로그인이 자꾸 풀립니다</h3>
+<p><b>[로그인 쿠키 삭제]</b> → <b>[네이버 로그인]</b> 순서로 다시 해보세요.
+크롬 창이 여러 개 떠 있으면 전부 닫고 하시는 것이 좋습니다.</p>
 <p>프로그램 폴더를 <b>다른 PC로 옮기면</b> 보안상 로그인 정보가 초기화됩니다.
-같은 PC 안에서 폴더 위치를 바꾸는 것은 괜찮습니다.</p>
+같은 PC 안에서 폴더 위치만 바꾸는 것은 괜찮습니다.</p>
 
-<h3>API 키가 사라졌습니다</h3>
-<p><b>[API 키 설정]</b>에서 다시 입력한 뒤 <b>[설정 저장]</b>을 눌러주세요.</p>
+<h3>API 키를 넣었는데 저장이 안 됩니다</h3>
+<p>API 설정 창 <b>왼쪽 아래의 [설정 저장]</b> 을 눌러야 저장됩니다.
+창을 그냥 닫으면 저장되지 않습니다.</p>
+
+<h3>글이 올라갔는데 제목과 내용이 안 어울립니다</h3>
+<p>프로그램이 제목과 본문이 어울리는지 검사해서, 안 맞으면 <b>올리지 않고 멈춥니다.</b>
+그래도 어색하면 키워드를 <b>더 구체적으로</b> 적어보세요.</p>
+<p>예: <code>제습기</code> → <code>여름철 제습기 관리법</code></p>
+
+<h3>실행이 오래 걸립니다</h3>
+<p>한 편에 <b>3~5분</b>이 정상입니다. <b>4 원고</b> 단계에서 1~3분 머무릅니다.
+10분이 넘어가면 진행 기록을 확인해 주세요.</p>
 
 <h3>그래도 해결이 안 되면</h3>
-<p>화면 아래 <b>로그 창 전체를 복사</b>해서 전달해 주세요. 원인 파악에 꼭 필요합니다.</p>
+<p>화면 아래 <b>진행 기록을 캡처</b>해서 보내주세요. 어느 단계에서 멈췄는지 보면 알 수 있습니다.</p>
+<div class="danger">
+  <strong>보내시기 전에</strong>
+  <b>API 키가 보이는 부분은 반드시 가려주세요.</b>
+</div>
+
+<h2 id="download">14. 다운로드</h2>
+<p>최신 버전은 <b>v1.1.1</b> 입니다.</p>
+
+<p>
+  <a class="dlbtn" href="https://github.com/am24311-netizen/nblog-guide/releases/latest">
+    ⬇ 최신 버전 내려받기
+  </a>
+</p>
+
+<p style="font-size:14px;color:var(--muted)">
+  버튼을 누르면 릴리스 페이지가 열립니다.
+  <b>Assets</b> 아래의 <code>NaverAutomation_v1.1.1_...zip</code> 을 클릭하면 받아집니다.
+</p>
+
+<div class="note">
+  <strong>이미 쓰고 계신 분</strong>
+  프로그램 안의 <b>[업데이트 확인]</b> 버튼으로도 받으실 수 있습니다.
+</div>
 
 <footer>
-  네이버 블로그 자동 포스팅 프로그램 · 사용 가이드<br>
+  네이버 블로그 자동 포스팅 프로그램 · 사용 가이드 · v1.1.1<br>
   이 문서의 링크를 외부에 공유하지 마세요.
 </footer>
 
