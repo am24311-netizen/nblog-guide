@@ -1,8 +1,8 @@
 {
-  "latest_version": "1.1.3",
-  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.1.3/NaverAutomation_v1.1.3_secure_release_20260918.zip",
-  "sha256": "09d06ed4f69e13c29ffdf11a6391b82c2507330d5012697e5a81e88da224a979",
+  "latest_version": "1.1.4",
+  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.1.4/NaverAutomation_v1.1.4_secure_release_20260922.zip",
+  "sha256": "c2cca5ac35924e3f0266ea304ab1fb63b931b900a11c74feeffd21cf1a78acb7",
   "required": false,
-  "release_notes": "제목과 본문이 맞는지 보는 검사가 긴 키워드를 글자 그대로만 찾아, 주제가 맞는 글까지 막던 문제를 고쳤습니다. 정보성 키워드 엑셀(정보성키워드 · 상품링크) 표와 화면 줄을 넣었습니다. 후기 엑셀 네 가지를 고쳤습니다 — 엑셀에서 저장할 때 '다른 이름으로 저장'이 뜨던 것, 표 붙여넣기, 쓴 줄을 지울 때 링크가 어긋나던 것, 형식이 깨진 파일을 지우던 것을 백업 이동으로. 텍스트 후기 목록이 잠기면 멈추던 것도 고쳤습니다. 작은 창에서 실행 화면이 잘리지 않도록 세로 스크롤을 넣었습니다.",
+  "release_notes": "쿠팡 파트너스 링크 글에는 광고 고지 문구가 설정과 상관없이 항상 들어가도록 했습니다. 후기 엑셀에 줄마다 상품 사진 폴더·사진 수·광고고지 칸을 넣었고, 사진 폴더가 비어 있는 상품은 원고를 쓰지 않고 건너뜁니다. 싹된다 프로그램에서 바로 발행을 시작하고 결과를 넘겨받는 연동을 넣었습니다. 혼합 모드에서 후기 글이 정보 글로 바뀌던 문제, 인용구가 본문 앞에 몰리던 문제, 같은 인용구가 두 번 들어가던 문제를 고쳤습니다. 발행 전 문법 검사와 읽기 쉬운 문단 나눔, 글과 맞지 않는 사진 거르기, 새 Flow 화면 대응을 넣었습니다.",
   "min_supported_version": "1.0.0"
 }
