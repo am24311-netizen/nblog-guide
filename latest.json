@@ -1,8 +1,8 @@
 {
-  "latest_version": "1.1.4",
-  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.1.4/NaverAutomation_v1.1.4_secure_release_20260922.zip",
-  "sha256": "c2cca5ac35924e3f0266ea304ab1fb63b931b900a11c74feeffd21cf1a78acb7",
+  "latest_version": "1.1.5",
+  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.1.5/NaverAutomation_v1.1.5_secure_release_20260923.zip",
+  "sha256": "fb33a56d2c6b2327d5bc98dc29627145a57ad141a81e153486b455fab592e0ae",
   "required": false,
-  "release_notes": "쿠팡 파트너스 링크 글에는 광고 고지 문구가 설정과 상관없이 항상 들어가도록 했습니다. 후기 엑셀에 줄마다 상품 사진 폴더·사진 수·광고고지 칸을 넣었고, 사진 폴더가 비어 있는 상품은 원고를 쓰지 않고 건너뜁니다. 싹된다 프로그램에서 바로 발행을 시작하고 결과를 넘겨받는 연동을 넣었습니다. 혼합 모드에서 후기 글이 정보 글로 바뀌던 문제, 인용구가 본문 앞에 몰리던 문제, 같은 인용구가 두 번 들어가던 문제를 고쳤습니다. 발행 전 문법 검사와 읽기 쉬운 문단 나눔, 글과 맞지 않는 사진 거르기, 새 Flow 화면 대응을 넣었습니다.",
+  "release_notes": "고객용 프로그램에 [가입 신청] 버튼이 생겼습니다. 이름과 연락처를 적고 [복사]를 누른 뒤, 구매하신 곳(판매자)에게 카톡이나 문자로 붙여 넣어 보내시면 됩니다. 적은 내용은 복사만 되고 프로그램에 저장되거나 어디로 보내지지 않습니다. 라이선스 키를 받으면 지금처럼 [라이선스 키 입력]에 붙여 넣으세요. 바탕화면·작업표시줄에 프로그램 아이콘(초록 '블')이 표시됩니다.",
   "min_supported_version": "1.0.0"
 }
