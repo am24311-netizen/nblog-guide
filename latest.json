@@ -1,8 +1,8 @@
 {
-  "latest_version": "1.1.5",
-  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.1.5/NaverAutomation_v1.1.5_secure_release_20260923.zip",
-  "sha256": "fb33a56d2c6b2327d5bc98dc29627145a57ad141a81e153486b455fab592e0ae",
+  "latest_version": "1.1.6",
+  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.1.6/NaverAutomation_v1.1.6_secure_release_20260926.zip",
+  "sha256": "9d2b8075da926152f6234eaebc643a8adaaf83f5ae43e3fb803ac3070a77fab4",
   "required": false,
-  "release_notes": "고객용 프로그램에 [가입 신청] 버튼이 생겼습니다. 이름과 연락처를 적고 [복사]를 누른 뒤, 구매하신 곳(판매자)에게 카톡이나 문자로 붙여 넣어 보내시면 됩니다. 적은 내용은 복사만 되고 프로그램에 저장되거나 어디로 보내지지 않습니다. 라이선스 키를 받으면 지금처럼 [라이선스 키 입력]에 붙여 넣으세요. 바탕화면·작업표시줄에 프로그램 아이콘(초록 '블')이 표시됩니다.",
+  "release_notes": "이번 업데이트에서 바뀐 것\n\n1) 프로그램을 켤 때 새 버전이 있으면 알려 드립니다.\n   (원하지 않으시면 [업데이트 확인] 단추 옆 '시작할 때 새 버전 알림' 체크를 끄세요)\n2) 글이 한 건도 올라가지 않은 날에는 이웃 블로그에 댓글/공감을 하지 않습니다.\n3) 여러 계정을 쓰실 때, 앞 계정이 댓글까지 했으면 다음 계정으로 넘어가기 전에\n   쉬는 시간을 지킵니다.\n4) 정보성 글에 그림 1장을 자동으로 만들어 넣을 수 있습니다.\n   ([이미지] 칸에서 켜세요. 기본은 꺼짐이고 1장에 약 3원입니다)",
   "min_supported_version": "1.0.0"
 }
