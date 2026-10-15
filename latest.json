@@ -1,8 +1,8 @@
 {
-  "latest_version": "1.1.9",
-  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.1.9/NaverAutomation_v1.1.9_secure_release_20260929.zip",
-  "sha256": "9e26356fc845f43d55d07c1abc940abfb22ce2dc8f4ec029a1a9dc5af35a83e9",
+  "latest_version": "1.2.0",
+  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.2.0/NaverAutomation_v1.2.0_secure_release_20261015.zip",
+  "sha256": "088756cf486ae194d6ef8b268c49cc152469b4e4e1640b0ee010a2652d605959",
   "required": false,
-  "release_notes": "이번 업데이트에서 바뀐 것\n\n1) 사진이 글 맨 아래에 몰리던 문제를 고쳤습니다. 사진이 글 사이사이에 들어갑니다.\n2) 글 주제와 맞지 않는 엉뚱한 사진, 같은 사진이 반복되던 것을 줄였습니다.\n3) 보기 불쾌한 사진(생선·뱀·피 등)은 넣지 않습니다. (글 주제가 그것일 때는 예외)\n4) 한 사람이 찍은 비슷한 사진이 한 글에 여러 장 몰리지 않게 했습니다.\n5) 배경이 투명한 사진이 깨져 보이던 문제를 고쳤습니다. (흰 배경으로 채움)\n6) 사진이 전혀 받아지지 않던 문제, 발행 뒤 다음 글이 막히던 문제를 고쳤습니다.",
+  "release_notes": "이번 업데이트에서 바뀐 것\n\n1) 토스쇼핑 쉐어링크를 쓸 수 있습니다. 링크 종류에 '토스 쉐어링크'가 생겼습니다.\n2) 링크를 넣으면 종류를 자동으로 알아보고, 고른 것과 다르면 알려줍니다.\n3) 글에 들어갈 '대가 표시' 문구를 미리 보여줍니다.\n4) 대가 표시를 고른 값이 아니라 실제 링크 기준으로 붙입니다.\n   (쿠팡을 골라 둔 채 토스 링크를 쓰면 틀린 문구가 붙던 것을 막습니다)\n5) 토스 링크는 주소가 바뀌지 않게 그대로 씁니다. (수익 집계 보존)\n6) 토스 링크 글에는 가격 숫자를 넣지 않습니다. (토스 규정)\n7) 여러 계정으로 돌릴 때 쿠팡 링크 종류가 안 넘어가던 것을 고쳤습니다.",
   "min_supported_version": "1.0.0"
 }
