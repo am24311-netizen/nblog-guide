@@ -1,8 +1,8 @@
 {
-  "latest_version": "1.2.3",
-  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.2.3/NaverAutomation_v1.2.3_update_20261020.zip",
-  "sha256": "324fbe5670ab6c20242c2beb5b4c965d70818d971a757a08e35be043cfc945b1",
+  "latest_version": "1.2.4",
+  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.2.4/NaverAutomation_v1.2.4_update_20261020.zip",
+  "sha256": "23289d76aae4fc99a64d7cae839b1bfaee65c8542c1b54fb5c31f90518cc9551",
   "required": false,
-  "release_notes": "이번 업데이트에서 바뀐 것\n\n1) 브라우저 글쓰기(제미나이 브라우저 · 챗지피티 브라우저 · 클로드 브라우저)를 뺐습니다.\n   오류가 잦아서 뺐습니다. 이 방식을 쓰고 계셨다면 글쓰기 엔진이\n   ★챗지피티 API★ 로 자동으로 바뀝니다.\n   → OpenAI API 키가 필요합니다.\n     [계정/API] 탭의 [🔑 API 키 설정] 에서 'OpenAI API Key' 를 넣어 주세요.\n\n2) 다계정 순차 발행을 뺐습니다.\n   여러 계정을 이어서 발행하다 계정 보호조치가 걸리는 일이 있었습니다.\n   계정마다 하나씩 [실행] 해 주세요.\n\n3) 발행 방식(글 올리기)은 1.2.2 와 같습니다.\n\n※ 1.2.2 를 새로 받아 두신 분은 \"업데이트 확인\" 만으로 됩니다.\n   1.2.2 이전 버전을 쓰고 계시면 Assets 에서 이름에 secure_release 가 들어간\n   ZIP 을 한 번 새로 받아 주세요. (update 가 들어간 ZIP 은 프로그램이 자동으로 쓰는 것입니다)",
+  "release_notes": "이번 업데이트에서 바뀐 것\n\n1) ★발행 시간대 밖이 되어도 프로그램이 멈추지 않습니다.★\n   지금까지는 글 사이 대기가 발행 시간대(예: 09~01시) 밖에서 끝나면\n   프로그램이 그대로 끝나 버렸습니다. 밤에 켜 두면 1건만 올라가고 멈추는 일이 있었습니다.\n   이제는 시간대가 다시 열릴 때까지(예: 아침 9시) 기다렸다가 이어서 발행합니다.\n   기다리는 동안 남은 시간이 화면에 보이고, 그만하려면 [중지] 를 누르면 됩니다.\n\n2) 1.2.3 에서 바뀐 것(브라우저 글쓰기·다계정 발행 제외)은 그대로입니다.\n   브라우저 글쓰기를 쓰셨다면 챗지피티 API 로 바뀌며 OpenAI API 키가 필요합니다.\n\n※ 1.2.2 이후 버전을 쓰고 계시면 \"업데이트 확인\" 만으로 됩니다.\n   그보다 오래된 버전이면 Assets 에서 이름에 secure_release 가 들어간 ZIP 을 한 번 새로 받아 주세요.",
   "min_supported_version": "1.0.0"
 }
