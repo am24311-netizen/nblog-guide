@@ -1,8 +1,8 @@
 {
-  "latest_version": "1.2.16",
-  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.2.16/NaverAutomation_v1.2.16_update_20261113.zip",
-  "sha256": "ec9401e9f348211c24a4c757ba23ba81c34d7c7e00a7b94e4e77624beab7b439",
+  "latest_version": "1.2.17",
+  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.2.17/NaverAutomation_v1.2.17_update_20261114.zip",
+  "sha256": "a5584ebc4d6bcbd1e0715821081d0f9acd651434d455f4d0e003b189c1dbd844",
   "required": false,
-  "release_notes": "이번 업데이트에서 바뀐 것\n\n1) [실행] 화면에서 '레시피' 를 고르면 키워드 칸 이름이 '레시피 키워드' 로 보입니다.\n   레시피 키워드는 지금처럼 정보 키워드 목록에 함께 적으면 됩니다.\n2) 왼쪽 메뉴 '유튜브 상품' 이름이 '유튜브 링크' 로 바뀌었습니다(유튜브 링크를 설정하는 곳).\n3) 1.2.15 의 내용(화면 정리 · 링크 배너 1번 · 첫 상품 사진 링크 · '스토어/상품 링크')은 그대로입니다.",
+  "release_notes": "이번 업데이트에서 바뀐 것\n\n1) 새로 설치했거나 [개인정보 삭제] 를 한 PC 에서 링크(스토어/상품 링크)를 넣은 글이 발행되지 않던 문제를 고쳤습니다.\n   첫 발행 때 네이버 [발행] 버튼으로 발행 토큰을 먼저 받습니다(이때 글은 나가지 않습니다).\n2) 글쓰기 화면에서 제목이 두 번 이어 써졌다가 잠시 뒤 한 줄로 바뀌던 것을 고쳤습니다. 이제 처음부터 한 번만 들어갑니다.\n3) 정보성 · 레시피 글의 카드가 새 디자인으로 바뀌었습니다(내용 길이에 맞춰 높이 조절 · 글자 자리 정리).\n4) 사진을 올릴 때 윈도 '열기' 창이 떠서 남아 있던 것을 고쳤습니다.",
   "min_supported_version": "1.0.0"
 }
