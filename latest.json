@@ -1,8 +1,8 @@
 {
-  "latest_version": "1.2.18",
-  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.2.18/NaverAutomation_v1.2.18_update_20261114.zip",
-  "sha256": "8749a67b677558e847856bad71fee8af0264f74605b9e231f92ed878637baf42",
+  "latest_version": "1.2.19",
+  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.2.19/NaverAutomation_v1.2.19_update_20261115.zip",
+  "sha256": "c5511c75c1d88d69e0033de8245d345a550ef50e6dfcaf257429eec128d936c9",
   "required": false,
-  "release_notes": "이번 업데이트에서 바뀐 것\n\n1) [계정/API] 화면의 [네이버 열기(로그인)] 단추를 누르면 '실패: ModuleNotFoundError' 가 나던 것을 고쳤습니다.\n   이제 단추를 누르면 네이버 로그인용 크롬 창이 열립니다.\n2) 1.2.17 의 내용(새 설치 PC 링크 글 발행 · 제목 한 번만 · 정보성/레시피 카드 새 디자인)은 그대로입니다.",
+  "release_notes": "이번 업데이트에서 바뀐 것\n\n1) 관리자용과 고객용이 같은 PC 에서 설정을 같이 쓰지 않게 했습니다.\n   고객용은 지금처럼 그대로 씁니다(설정 · 로그인 · 키 바뀌는 것 없음).\n2) 1.2.18 의 내용([네이버 열기(로그인)] 단추 고침 등)은 그대로입니다.",
   "min_supported_version": "1.0.0"
 }
