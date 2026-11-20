@@ -1,8 +1,8 @@
 {
-  "latest_version": "1.2.23",
-  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.2.23/NaverAutomation_v1.2.23_update_20261118.zip",
-  "sha256": "065d39b9dd06442511efb32152a991a989dae880a6e1f13cf5a96b8656bdf7a7",
+  "latest_version": "1.2.25",
+  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.2.25/NaverAutomation_v1.2.25_update_20261120.zip",
+  "sha256": "508e2740162406b422482298b370309f14b8a3859d88cae0e62df1d06f147b29",
   "required": false,
-  "release_notes": "이번 업데이트에서 바뀐 것\n\n1) 글에 AI 가 쓴 티가 덜 나도록 고쳤습니다. ('결론적으로' 로 시작하는 문장 · 쉼표 버릇 · '다양한' 반복을 줄입니다)\n2) 이모지가 하나도 없는 글에는 이모지 1개를 자연스럽게 넣습니다. ('깔끔한 정보체' 말투는 넣지 않습니다)\n3) 발행 뒤 이웃 댓글 수를 매번 1개부터 설정한 수까지 무작위로 정합니다.\n4) 후기 엑셀에 '내경험' 칸을 만들어 적으면, 그 경험을 글에 녹여 씁니다.\n5) 영상 상품 글 등 사진을 한꺼번에 넣던 글도 하나씩 넣도록 바꿔, 사진 서버 응답 없음으로 발행이 멈추던 문제를 고쳤습니다.",
+  "release_notes": "이번 업데이트에서 바뀐 것\n\n1) 유튜브 연예인·인기 영상 상품 글에 '영상 이야기'(어떤 장면에서 무엇이 나왔는지)를 짧게 넣습니다. 오래된 영상은 넣지 않습니다.\n2) 영상 속 제품과 연결된 쿠팡 상품이 다른 물건이면 영상 이야기를 넣지 않습니다. (엉뚱한 이야기가 붙는 것 방지)\n3) 본문 낱말 가운데 'ㆍ' 가 끼던 문제를 고쳤습니다. (예: '세정ㆍ액' -> '세척액', '않고ㆍ 자연' -> '않고 자연')\n4) 유튜브 채널 표를 스크롤해서 볼 수 있게 했습니다.",
   "min_supported_version": "1.0.0"
 }
