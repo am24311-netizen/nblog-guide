@@ -1,8 +1,8 @@
 {
-  "latest_version": "1.2.25",
-  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.2.25/NaverAutomation_v1.2.25_update_20261120.zip",
-  "sha256": "508e2740162406b422482298b370309f14b8a3859d88cae0e62df1d06f147b29",
+  "latest_version": "1.2.26",
+  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.2.26/NaverAutomation_v1.2.26_update_20261121.zip",
+  "sha256": "cd771475a9543d75447f1baf08bf0f87eebfdc8aff73615ab983f9c57bc1b736",
   "required": false,
-  "release_notes": "이번 업데이트에서 바뀐 것\n\n1) 유튜브 연예인·인기 영상 상품 글에 '영상 이야기'(어떤 장면에서 무엇이 나왔는지)를 짧게 넣습니다. 오래된 영상은 넣지 않습니다.\n2) 영상 속 제품과 연결된 쿠팡 상품이 다른 물건이면 영상 이야기를 넣지 않습니다. (엉뚱한 이야기가 붙는 것 방지)\n3) 본문 낱말 가운데 'ㆍ' 가 끼던 문제를 고쳤습니다. (예: '세정ㆍ액' -> '세척액', '않고ㆍ 자연' -> '않고 자연')\n4) 유튜브 채널 표를 스크롤해서 볼 수 있게 했습니다.",
+  "release_notes": "이번 업데이트에서 바뀐 것\n\n1) 글 발행이 막히거나 실패해 프로그램이 멈출 때, 쓰려던 후기 상품 줄(영상 줄 포함)과 키워드가 지워지지 않고 그대로 남습니다. 다음에 다시 쓸 수 있습니다.\n2) 유튜브 연예인·인기 영상 상품 글에 '영상 이야기'(어떤 장면에서 무엇이 나왔는지)를 짧게 넣습니다. 오래된 영상은 넣지 않습니다.\n3) 영상 속 제품과 연결된 쿠팡 상품이 다른 물건이면 영상 이야기를 넣지 않습니다.\n4) 본문 낱말 가운데 'ㆍ' 가 끼던 문제를 고쳤습니다.\n5) 유튜브 채널 표를 스크롤해서 볼 수 있게 했습니다.",
   "min_supported_version": "1.0.0"
 }
