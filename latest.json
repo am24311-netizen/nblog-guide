@@ -1,8 +1,8 @@
 {
-  "latest_version": "1.2.28",
-  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.2.28/NaverAutomation_v1.2.28_update_20261123.zip",
-  "sha256": "8f5884d64215e031bed6be6eadcdfdc3a31f99da4cb20fa53ff535d9303b612b",
+  "latest_version": "1.2.29",
+  "download_url": "https://github.com/am24311-netizen/nblog-guide/releases/download/v1.2.29/NaverAutomation_v1.2.29_update_20261125.zip",
+  "sha256": "ba33a0edcd95fba50e7b3969f1bec072ee41ea9fe9c328cfee83dfb1216b55a0",
   "required": false,
-  "release_notes": "이번 업데이트에서 바뀐 것\n\n1) 정보성 글 제목이 '알면 편한 …, 놓치기 쉬운 포인트' · '고르기 전이라면 …, 선택 기준 정리' 같은 정해진 틀 문장으로 바뀌던 문제를 고쳤습니다. AI 가 글 내용에 맞게 지은 제목을 그대로 씁니다.\n2) 정보성 제목이 32자를 조금 넘는다는 이유로 버려지던 문제를 고쳤습니다(40자까지 그대로).\n3) 1.2.27 내용(크롬 창이 내려가거나 화면이 늦어도 사진 올리고 발행) 포함.",
+  "release_notes": "이번 업데이트에서 바뀐 것\n\n1) 이용권을 '동시에 PC 1대(어느 PC 에서나)' 규칙에 맞게 준비했습니다. 다른 PC 에서 쓰는 중이면 [이 PC 에서 쓰기]로 이 PC 에서 이어 쓸 수 있습니다(사이트에서 규칙이 켜진 뒤부터 적용).\n2) 이용권 확인을 하루 한 번에서 5분마다로 바꿨습니다.\n3) 1.2.28 내용(정보성 제목) 포함.",
   "min_supported_version": "1.0.0"
 }
